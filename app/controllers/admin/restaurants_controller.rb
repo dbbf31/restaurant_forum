@@ -15,7 +15,7 @@ class Admin::RestaurantsController < ApplicationController
       redirect_to admin_restaurants_path
     else
       flash.now[:alert] = "restaurant was failed to create"
-      render :nee
+      render :new
     end
   end
 
