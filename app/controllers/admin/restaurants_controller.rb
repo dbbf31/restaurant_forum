@@ -19,7 +19,7 @@ class Admin::RestaurantsController < ApplicationController
     end
   end
 
-  before_action :set_restaurant, only: [ :show, :edit, :update]
+  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy]
 
   def show
 
@@ -28,6 +28,13 @@ class Admin::RestaurantsController < ApplicationController
   def edit
     
   end
+
+  def destroy
+    @restaurant.destroy
+    redirect_to admin_restaurants_path
+    flash[:alert] = "restaurant was deleted"
+  end
+
 
   def update
     if @restaurant.update(restaurant_params)
