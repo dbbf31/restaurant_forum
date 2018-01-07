@@ -21,7 +21,7 @@ category_list =[
 ]
 
 category_list.each do |category|
-  Category.create( name: category[:name])
+  Category.create( name: category[:name] )
 end
 puts "Category create!"
 
