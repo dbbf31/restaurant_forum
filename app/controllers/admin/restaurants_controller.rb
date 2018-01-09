@@ -1,5 +1,7 @@
 class Admin::RestaurantsController < ApplicationController
+  before_action :authenticate_admin
 
+  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy]
   def index
     @restaurants = Restaurant.page(params[:page]).per(10)
   end
@@ -18,8 +20,6 @@ class Admin::RestaurantsController < ApplicationController
       render :new
     end
   end
-
-  before_action :set_restaurant, only: [ :show, :edit, :update, :destroy]
 
   def show
 
