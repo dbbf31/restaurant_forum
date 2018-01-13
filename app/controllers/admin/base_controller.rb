@@ -1,7 +1,7 @@
 class Admin::BaseController < ApplicationController
   before_action :authenticate_admin
 
-  Private
+  private
 
    def authenticate_admin
      unless current_user.admin?
