@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20180113073320) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.integer "restaurant_id"
+    t.integer "user_id"
+    t.datetime "create_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "tel"
