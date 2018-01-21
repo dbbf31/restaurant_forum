@@ -37,6 +37,10 @@
       <p><%= simple_format comment.content %></p>
       <p class="text-muted">
         <em><%= time_ago_in_words(comment.created_at) %> ago -</em>
+         <!-- 請插入以下程式碼 --> 
+        <% if current_user.admin? %>
+          <%= link_to "Delete", restaurant_comment_path(@restaurant, comment), method: :delete %>
+        <% end %>
       </p>
     </div>
     <hr>
