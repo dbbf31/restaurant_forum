@@ -28,3 +28,5 @@ puts "Category create!"
 # Default admin
 User.create(email: "root@example.com", password: "12345678", role: "admin")
 puts "Default admin create!"
+
+#update root@example.com & 123456
