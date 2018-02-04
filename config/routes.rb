@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :restaurants, only: [:index, :show] do
-    resources :comments, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
     # 瀏覽所有餐廳的最新動態
     collection do 
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     # 瀏覽個別餐廳的 Dashboard
     member do
       get :dashboard
+
+      # 收藏 / 取消收藏
+      post :favorite
+      post :unfavorite
     end
   end
 
