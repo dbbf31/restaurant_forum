@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       # 收藏 / 取消收藏
       post :favorite
       post :unfavorite
+
+      # 喜愛 / 取消喜愛
+      post :like
+      post :unlike
     end
   end
 
