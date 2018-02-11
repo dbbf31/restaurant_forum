@@ -23,11 +23,8 @@
 
        <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
 
-       <% if @restaurant.is_liked?(current_user) %>
-       <%= link_to 'UnLike', unlike_restaurant_path(@restaurant), method: :post, class: "btn btn-info" %>
-       <% else %>
-       <%= link_to 'Like', like_restaurant_path(@restaurant), method: :post, class: "btn btn-primary" %>
-       <% end %>
+       <%= render partial: "shared/like", locals: {restaurant: @restaurant} %>
+
 
      </div>
  
