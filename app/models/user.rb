@@ -17,6 +17,10 @@ class User < ApplicationRecord
   # 「使用者喜愛很多餐廳」的多對多關聯
   has_many :likes, dependent: :destroy
   has_many :liked_restaurants, through: :likes, source: :restaurant
+
+  # 「使用者追蹤美食達人」的多對多關聯
+  has_many :followships, dependent: :destroy
+  has_many :followings, through: :followships
   
   def admin?
     self.role == "admin"
