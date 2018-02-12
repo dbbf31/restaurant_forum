@@ -22,10 +22,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show, :edit, :update]
+  # 將 :index 加入開放項目
+  resources :users, only: [:index, :show, :edit, :update]
 
   resources :categories, only: :show
   root "restaurants#index"
+
+  resources :followships, only: [:create, :destroy]
   
 
   namespace :admin do
